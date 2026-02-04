@@ -23,7 +23,7 @@ people <- read_xlsx("data/activity-challenge.xlsx", sheet = "miles") |>
 
 by_person <- people |>
   group_by(Name, icon) |>
-  summarise(Miles = round(sum(Miles),0)) |>
+  summarise(Miles = round(sum(Miles),1)) |>
   as_tibble() |>
   mutate(Meters = Miles * miles_to_meters, Type = "Staff")
   
